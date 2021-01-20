@@ -1,13 +1,7 @@
-:host {
-  padding: 30px;
-  position: absolute;
-  background-color: #d4d4d4;
-  height: calc( 100% - 60px);
-  width: calc(100% - 60px);
-}
-
-aside {
-  float: left;
+#side {
+  background-color: white;
+  height: 700px;
+  width: 300px;
 }
 
 header {

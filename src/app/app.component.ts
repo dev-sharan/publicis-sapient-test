@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'publicis-sapient-test';
+  year = ['2006','2006','2006','2006','2006','2006','2006']
 }
