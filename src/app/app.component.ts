@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
   firstdata = null;
 
   title = 'publicis-sapient-test';
-  year = ['2006','2006','2006','2006','2006','2006','2006']
+  year = ['2006','2007','2008','2009','2010','2011','2012', '2013', "2014". "2015", "2016", "2017","2018", "2019"]
 
   constructor(private data: DataService) {}
 
