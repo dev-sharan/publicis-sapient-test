@@ -2,7 +2,7 @@
   <header [ngStyle.lt-sm]="{'text-align': 'center'}">
     SpacEx Launch Programs
   </header>
-  <main fxLayout="row" style="margin-top: 35px;" fxLayoutGap="30px" fxLayout.lt-sm="column"
+  <main fxLayout="row" style="margin-top: 35px;" fxLayoutGap="38px" fxLayout.lt-sm="column"
     [ngStyle.lt-sm]="{'align-items':'center'}">
     <section id="side" style="border: 1px solid white; border-radius: 9px;">
       <div class="" style="font-size: 18px; font-weight: 600; padding: 8px 8px 0px 8px;">Filters</div>
@@ -27,11 +27,22 @@
         <div class="sidesec">False</div>
       </div>
     </section>
-    <section id="content">
-      hello
+    <section id="content" style="width: calc(100% - 360px);">
+      <div class="" *ngIf="firstdata != null" fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="50px grid">
+        <div *ngFor="let data of firstdata">
+          <div class="card">
+            <div class="" style="display: flex; justify-content: center; align-items: center; width: 100%; height:310px;">
+              <div class="imgholder" [ngStyle]="{'background-image': 'url('+data['links']['mission_patch_small']+')'}"></div>
+            </div>
+            <div class="">
+              {{data['mission_name']}}&nbsp;#{{data['flight_number']}}
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
-  <footer>
+  <footer style="padding-top: 30px;">
     <div class="" style="font-size: 20px;padding: 20px; display: flex; justify-content: center;"><span
         style="font-weight: 500;">Developed By:</span> &nbsp;Manish</div>
   </footer>
