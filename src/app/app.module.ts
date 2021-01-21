@@ -17,7 +17,7 @@ import { FlexLayoutServerModule } from '@angular/flex-layout/server';
     AppRoutingModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    FlexLayoutServerModule
+    //FlexLayoutServerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

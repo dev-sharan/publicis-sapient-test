@@ -6,22 +6,33 @@
     [ngStyle.lt-sm]="{'align-items':'center'}">
     <section id="side" style="border: 1px solid white; border-radius: 9px;">
       <div class="" style="font-size: 18px; font-weight: 600; padding: 8px 8px 0px 8px;">Filters</div>
-      <div class="" style="font-size: 17px; font-weight: 400; padding: 6px; border-bottom: 2px solid #b4b4b4; margin: 0px 40px; ; text-align: center;">Launch Year</div>
+      <div class=""
+        style="font-size: 17px; font-weight: 400; padding: 6px; border-bottom: 2px solid #b4b4b4; margin: 0px 40px; ; text-align: center;">
+        Launch Year</div>
       <div class="" fxLayout="row wrap" style="width: 100%; justify-content: space-between; padding: 20px;">
-        <div class="" *ngFor="let items of year" style="width: 95px;
-    height: 35px;
-    background-color: #2f8c1dc4;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #2f8c1dc4;
-    border-radius: 11px;
-    font-size: 15px;
-    margin: 10px;">{{items}}</div>
+        <div class="sidesec" *ngFor="let items of year">{{items}}</div>
+      </div>
+      <div class=""
+        style="font-size: 17px; font-weight: 400; padding: 6px; border-bottom: 2px solid #b4b4b4; margin: 0px 40px; ; text-align: center;">
+        Successful Launch</div>
+      <div class="" fxLayout="row wrap" style="width: 100%; justify-content: space-between; padding: 20px;">
+        <div class="sidesec">True</div>
+        <div class="sidesec">False</div>
+      </div>
+      <div class=""
+        style="font-size: 17px; font-weight: 400; padding: 6px; border-bottom: 2px solid #b4b4b4; margin: 0px 40px; ; text-align: center;">
+        Successful Landing</div>
+      <div class="" fxLayout="row wrap" style="width: 100%; justify-content: space-between; padding: 20px;">
+        <div class="sidesec">True</div>
+        <div class="sidesec">False</div>
       </div>
     </section>
     <section id="content">
       hello
     </section>
   </main>
+  <footer>
+    <div class="" style="font-size: 20px;padding: 20px; display: flex; justify-content: center;"><span
+        style="font-weight: 500;">Developed By:</span> &nbsp;Manish</div>
+  </footer>
 </main>

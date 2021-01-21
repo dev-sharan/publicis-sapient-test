@@ -174,5 +174,8 @@
       }
     }
   },
-  "defaultProject": "publicis-sapient-test"
+  "defaultProject": "publicis-sapient-test",
+  "cli": {
+    "analytics": false
+  }
 }

@@ -1,10 +1,23 @@
 #side {
   background-color: white;
-  height: 700px;
+  height: 100%;
   width: 300px;
 }
 
 header {
   font-weight: 500;
   font-size: 35px;
+}
+
+.sidesec {
+  width: 95px;
+    height: 35px;
+    background-color: #2f8c1dc4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #2f8c1dc4;
+    border-radius: 11px;
+    font-size: 15px;
+    margin: 10px;
 }
