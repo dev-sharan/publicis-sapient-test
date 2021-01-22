@@ -44,7 +44,9 @@ export class AppComponent implements OnInit {
     if (launchsuccess != null) {
       this.launchsuccess = launchsuccess;
     }
-    this.data.filterApi(this.yrfltr, this.launchsuccess, this.landsuccess);
+    this.data.filterApi(this.yrfltr, this.launchsuccess, this.landsuccess).subscribe((data) => {
+      this.firstdata = data;
+    });
   }
 
   yrTogFn(data) {

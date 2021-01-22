@@ -13,14 +13,18 @@ header {
 .sidesec {
   width: 95px;
     height: 35px;
-    background-color: #2f8c1dc4;
+    background-color: #a4cc4870;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #2f8c1dc4;
+    border: 1px solid #a4cc4870;
     border-radius: 11px;
     font-size: 15px;
     margin: 10px;
+}
+
+.sidesec:hover {
+  background-color: #57bb05e0;
 }
 
 .card  {
@@ -39,9 +43,9 @@ header {
 }
 
 .active {
-  background-color: white;
+  background-color: #57bb05e0;
 }
 
 .inactive {
-  background-color: #2f8c1dc4;
+  background-color: #a4cc4870;
 }
