@@ -10,21 +10,21 @@
         style="font-size: 17px; font-weight: 400; padding: 6px; border-bottom: 2px solid #b4b4b4; margin: 0px 40px; ; text-align: center;">
         Launch Year</div>
       <div class="" fxLayout="row wrap" style="width: 100%; justify-content: space-between; padding: 20px;">
-        <div class="sidesec" *ngFor="let items of year">{{items}}</div>
+        <div class="sidesec" *ngFor="let items of year" (click) = "filter(items,null,null); yrTogFn(items)" [ngClass]="yrtoggle === items ? 'active' : 'inactive'">{{items}}</div>
       </div>
       <div class=""
         style="font-size: 17px; font-weight: 400; padding: 6px; border-bottom: 2px solid #b4b4b4; margin: 0px 40px; ; text-align: center;">
         Successful Launch</div>
       <div class="" fxLayout="row wrap" style="width: 100%; justify-content: space-between; padding: 20px;">
-        <div class="sidesec">True</div>
-        <div class="sidesec">False</div>
+        <div class="sidesec" (click) = "filter(null,true,null)">True</div>
+        <div class="sidesec" (click) = "filter(null,false,null)">False</div>
       </div>
       <div class=""
         style="font-size: 17px; font-weight: 400; padding: 6px; border-bottom: 2px solid #b4b4b4; margin: 0px 40px; ; text-align: center;">
         Successful Landing</div>
       <div class="" fxLayout="row wrap" style="width: 100%; justify-content: space-between; padding: 20px;">
-        <div class="sidesec">True</div>
-        <div class="sidesec">False</div>
+        <div class="sidesec" (click) = "filter(null,null,true)">True</div>
+        <div class="sidesec" (click) = "filter(null,null,false)">False</div>
       </div>
     </section>
     <section id="content" style="width: calc(100% - 360px);">
@@ -52,7 +52,7 @@
               Successful Lauch:&nbsp; <span style="font-weight: 400; color:#195184"> {{data['launch_success']}}</span>
             </div>
             <div class="" style="padding: 8px 37px 0px 37px;font-size: 16px; font-weight: 600 ">
-              Successful Landing:&nbsp; <span style="font-weight: 400; color:#195184"> {{data['launch_landing']}}</span>
+              Successful Landing:&nbsp; <span style="font-weight: 400; color:#195184"> {{data['launch_landing'] ? data['launch_landing'] :"NA" }}</span>
             </div>
           </div>
         </div>
