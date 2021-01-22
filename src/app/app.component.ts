@@ -25,28 +25,26 @@ export class AppComponent implements OnInit {
   constructor(private data: DataService) { }
 
   ngOnInit() {
+    this.intialApiCall();
+  }
+
+  intialApiCall() {
     this.data.fistTimeApiCall().subscribe((data) => {
       this.firstdata = data;
     });
   }
 
   filter(yrfltr?, launchsuccess?, landsuccess?) {
-    if (this.yrtoggle === '-1' && this.launchtoggle === '-1' && this.landtoggle === '-1') {
-      this.data.fistTimeApiCall().subscribe((data) => {
-        this.firstdata = data;
-      });
-    } else {
-      if (yrfltr != null) {
-        this.yrfltr = yrfltr;
-      }
-      if (landsuccess != null) {
-        this.landsuccess = landsuccess;
-      }
-      if (launchsuccess != null) {
-        this.launchsuccess = launchsuccess;
-      }
-      this.data.filterApi(this.yrfltr, this.launchsuccess, this.landsuccess);
+    if (yrfltr != null) {
+      this.yrfltr = yrfltr;
     }
+    if (landsuccess != null) {
+      this.landsuccess = landsuccess;
+    }
+    if (launchsuccess != null) {
+      this.launchsuccess = launchsuccess;
+    }
+    this.data.filterApi(this.yrfltr, this.launchsuccess, this.landsuccess);
   }
 
   yrTogFn(data) {
@@ -58,7 +56,7 @@ export class AppComponent implements OnInit {
   }
 
   launchTogFn(data) {
-    if (data === this.yrtoggle) {
+    if (data === this.launchtoggle) {
       this.launchtoggle = '-1';
     } else {
       this.launchtoggle = data + '';
@@ -66,10 +64,16 @@ export class AppComponent implements OnInit {
   }
 
   landTogFn(data) {
-    if (data === this.yrtoggle) {
+    if (data === this.landtoggle) {
       this.landtoggle = '-1';
     } else {
       this.landtoggle = data + '';
+    }
+  }
+
+  checkRes() {
+    if (this.yrtoggle === '-1' && this.launchtoggle === '-1' && this.landtoggle === '-1') {
+      this.intialApiCall();
     }
   }
 }

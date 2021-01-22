@@ -10,21 +10,21 @@
         style="font-size: 17px; font-weight: 400; padding: 6px; border-bottom: 2px solid #b4b4b4; margin: 0px 40px; ; text-align: center;">
         Launch Year</div>
       <div class="" fxLayout="row wrap" style="width: 100%; justify-content: space-between; padding: 20px;">
-        <div class="sidesec" *ngFor="let items of year" (click) = "filter(items,null,null); yrTogFn(items)" [ngClass]="yrtoggle === items ? 'active' : 'inactive'">{{items}}</div>
+        <div class="sidesec" *ngFor="let items of year" (click) = "filter(items,null,null); yrTogFn(items); checkRes()" [ngClass]="yrtoggle === items ? 'active' : 'inactive'">{{items}}</div>
       </div>
       <div class=""
         style="font-size: 17px; font-weight: 400; padding: 6px; border-bottom: 2px solid #b4b4b4; margin: 0px 40px; ; text-align: center;">
         Successful Launch</div>
       <div class="" fxLayout="row wrap" style="width: 100%; justify-content: space-between; padding: 20px;">
-        <div class="sidesec" (click) = "filter(null,true,null)">True</div>
-        <div class="sidesec" (click) = "filter(null,false,null)">False</div>
+        <div class="sidesec" (click) = "filter(null,true,null); launchTogFn('true'); checkRes()" [ngClass]="launchtoggle === 'true' ? 'active' : 'inactive'">True</div>
+        <div class="sidesec" (click) = "filter(null,false,null); launchTogFn('false'); checkRes()" [ngClass]="launchtoggle === 'false' ? 'active' : 'inactive'">False</div>
       </div>
       <div class=""
         style="font-size: 17px; font-weight: 400; padding: 6px; border-bottom: 2px solid #b4b4b4; margin: 0px 40px; ; text-align: center;">
         Successful Landing</div>
       <div class="" fxLayout="row wrap" style="width: 100%; justify-content: space-between; padding: 20px;">
-        <div class="sidesec" (click) = "filter(null,null,true)">True</div>
-        <div class="sidesec" (click) = "filter(null,null,false)">False</div>
+        <div class="sidesec" (click) = "filter(null,null,true); landTogFn('true'); ; checkRes()" [ngClass]="landtoggle === 'true' ? 'active' : 'inactive'">True</div>
+        <div class="sidesec" (click) = "filter(null,null,false); landTogFn('false'); checkRes()" [ngClass]="landtoggle === 'false' ? 'active' : 'inactive'">False</div>
       </div>
     </section>
     <section id="content" style="width: calc(100% - 360px);">
