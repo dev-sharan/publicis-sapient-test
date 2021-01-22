@@ -4,60 +4,56 @@
   </header>
   <main fxLayout="row" style="margin-top: 30px;" fxLayoutGap="30px" fxLayout.lt-sm="column"
     [ngStyle.lt-sm]="{'align-items':'center'}">
-    <section id="side" style="border: 1px solid white; border-radius: 9px;">
-      <div class="" style="font-size: 16px; font-weight: 600; padding: 8px 8px 0px 8px;">Filters</div>
-      <div class=""
-        style="font-size: 13px; font-weight: 400; padding: 6px; border-bottom: 2px solid #b4b4b4; margin: 0px 30px; ; text-align: center;">
-        Launch Year</div>
-      <div class="" fxLayout="row wrap" style="width: 100%; justify-content: space-between; padding: 5px 20px;">
+    <section id="side">
+      <div class="filthead">Filters</div>
+      <div class="ly">Launch Year</div>
+      <div class="lywrap" fxLayout="row wrap">
         <div class="sidesec" *ngFor="let items of year" (click) = "filter(items,null,null); yrTogFn(items); checkRes()" [ngClass]="yrtoggle === items ? 'active' : 'inactive'">{{items}}</div>
       </div>
-      <div class=""
-        style="font-size: 13px; font-weight: 400; padding: 6px; border-bottom: 2px solid #b4b4b4; margin: 0px 30px; ; text-align: center;">
+      <div class="slnch">
         Successful Launch</div>
-      <div class="" fxLayout="row wrap" style="width: 100%; justify-content: space-between; padding: 5px 20px;">
+      <div class="slnchwrap" fxLayout="row wrap">
         <div class="sidesec" (click) = "filter(null,true,null); launchTogFn('true'); checkRes()" [ngClass]="launchtoggle === 'true' ? 'active' : 'inactive'">True</div>
         <div class="sidesec" (click) = "filter(null,false,null); launchTogFn('false'); checkRes()" [ngClass]="launchtoggle === 'false' ? 'active' : 'inactive'">False</div>
       </div>
-      <div class=""
-        style="font-size: 13px; font-weight: 400; padding: 6px; border-bottom: 2px solid #b4b4b4; margin: 0px 30px; ; text-align: center;">
+      <div class="slnch">
         Successful Landing</div>
-      <div class="" fxLayout="row wrap" style="width: 100%; justify-content: space-between; padding: 5px 20px;">
+      <div class="slnchwrap" fxLayout="row wrap">
         <div class="sidesec" (click) = "filter(null,null,true); landTogFn('true'); ; checkRes()" [ngClass]="landtoggle === 'true' ? 'active' : 'inactive'">True</div>
         <div class="sidesec" (click) = "filter(null,null,false); landTogFn('false'); checkRes()" [ngClass]="landtoggle === 'false' ? 'active' : 'inactive'">False</div>
       </div>
     </section>
-    <section id="content" style="width: calc(100% - 240px);  display: flex; justify-content: center;">
-      <div class="" style="width: 100%; max-width: 891px;">
-              <div class="" *ngIf="firstdata != null" fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="10px grid">
-        <div *ngFor="let data of firstdata">
-          <div class="card">
-            <div class="" style="display: flex; justify-content: center; align-items: center; width: 100%; height:170px;">
-              <div class="imgholder" [ngStyle]="{'background-image': 'url('+data['links']['mission_patch_small']+')'}"></div>
-            </div>
-            <div class="" style="padding: 0px 18px;font-size: 16px; font-weight: 500; color: #195184 ">
-              {{data['mission_name']}}&nbsp;#{{data['flight_number']}}
-            </div>
-            <div class="" style="padding: 8px 18px 0px 18px;font-size: 14px; font-weight: 600 ">
-              <span>Mission Ids:</span>
-              <ul style="margin: 0; font-weight: 400; font-size: 13px; align-items: center; color:#195184 " *ngIf="data['mission_id'].length > 0">
-                <li style="padding-top: 10px; word-break: break-all;">{{data['mission_id']}}</li>
-              </ul>
-              <div style="margin: 0; font-weight: 400; font-size: 13px; text-align: center;padding-top: 10px; color:#195184" *ngIf="data['mission_id'].length == 0">
-               NA</div>
-            </div>
-            <div class="" style="padding: 8px 18px 0px 18px;font-size: 14px; font-weight: 600 ">
-              Launch Year:&nbsp; <span style="font-weight: 400; color:#195184"> {{data['launch_year']}}</span>
-            </div>
-            <div class="" style="padding: 8px 18px 0px 18px;font-size: 14px; font-weight: 600 ">
-              Successful Lauch:&nbsp; <span style="font-weight: 400; color:#195184"> {{data['launch_success']}}</span>
-            </div>
-            <div class="" style="padding: 8px 18px 0px 18px;font-size: 14px; font-weight: 600 ">
-              Successful Landing:&nbsp; <span style="font-weight: 400; color:#195184"> {{data['launch_landing'] ? data['launch_landing'] :"NA" }}</span>
+    <section id="content">
+      <div class="gridwrap">
+        <div *ngIf="firstdata != null" fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="10px grid">
+          <div *ngFor="let data of firstdata">
+            <div class="card">
+              <div class="imgwrap">
+                <div class="imgholder" [ngStyle]="{'background-image': 'url('+data['links']['mission_patch_small']+')'}"></div>
+              </div>
+              <div class="rockName">
+                {{data['mission_name']}}&nbsp;#{{data['flight_number']}}
+              </div>
+              <div class="subhead">
+                <span>Mission Ids:</span>
+                <ul style="margin: 0; font-weight: 400; font-size: 13px; align-items: center; color:#195184 " *ngIf="data['mission_id'].length > 0">
+                  <li style="padding-top: 10px; word-break: break-all;">{{data['mission_id']}}</li>
+                </ul>
+                <div style="margin: 0; font-weight: 400; font-size: 13px; text-align: center;padding-top: 10px; color:#195184" *ngIf="data['mission_id'].length == 0">
+                NA</div>
+              </div>
+              <div class="subhead">
+                Launch Year:&nbsp; <span style="font-weight: 400; color:#195184"> {{data['launch_year']}}</span>
+              </div>
+              <div class="subhead">
+                Successful Lauch:&nbsp; <span style="font-weight: 400; color:#195184"> {{data['launch_success']}}</span>
+              </div>
+              <div class="subhead">
+                Successful Landing:&nbsp; <span style="font-weight: 400; color:#195184"> {{data['launch_landing'] ? data['launch_landing'] :"NA" }}</span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
       </div>
 
     </section>
