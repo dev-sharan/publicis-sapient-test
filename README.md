@@ -2,26 +2,20 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.7.
 
-## Development server
+## Demo link with SSR(server-side rendering)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+[SpacEx Horeku Link](https://manish-publicis-sapient-test.herokuapp.com/)
 
-## Code scaffolding
+## Screen-Shots
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### without filter
 
-## Build
+`page with initial data`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+![page-with-initial-data](https://rawcdn.githack.com/dev-sharan/uploads/87984ed96b5e038383a974edcc1fa7ec41c4daec/Screenshot%20(53).png)
 
-## Running unit tests
+### with filter
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+`page after applying filter`
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![page-with-filter](https://rawcdn.githack.com/dev-sharan/uploads/87984ed96b5e038383a974edcc1fa7ec41c4daec/Screenshot%20(52).png)
