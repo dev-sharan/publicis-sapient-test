@@ -1,26 +1,26 @@
 #side {
   background-color: white;
   height: 100%;
-  width: 300px;
+  width: 200px;
 }
 
 header {
   font-weight: 500;
-  font-size: 35px;
+  font-size: 24px;
   line-height: 1;
 }
 
 .sidesec {
-  width: 95px;
-    height: 35px;
+  width: 58px;
+    height: 20px;
     background-color: #a4cc4870;
     display: flex;
     align-items: center;
     justify-content: center;
     border: 1px solid #a4cc4870;
     border-radius: 11px;
-    font-size: 15px;
-    margin: 10px;
+    font-size: 13px;
+    margin: 7px;
 }
 
 .sidesec:hover {
@@ -28,18 +28,19 @@ header {
 }
 
 .card  {
-  height: 540px;
-        width: 331px;
+  height: 430px;
+        width: 170px;
     background-color: white;
     border: 1px solid white;
     border-radius: 9px;
 }
 
 .imgholder {
-  width: 256px;
+  width: 130px;
     background-repeat: no-repeat;
-    height: 256px;
+    height: 130px;
     background-color: #d8d8d8;
+    background-size: contain;
 }
 
 .active {
