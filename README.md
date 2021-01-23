@@ -5,7 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Technology Stack / library
 
     • Angular 11(SSR for heroku deployment
-    • Karma + jasmin for unit test case
+    • Karma + jasmine for unit test case
     • SCSS
     • HTML
 
