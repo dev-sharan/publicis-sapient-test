@@ -1,9 +1,8 @@
 <main style="padding: 30px">
-  <header [ngStyle.lt-sm]="{'text-align': 'center'}">
+  <header [ngStyle]="{'@media (max-width: 700px)': {'text-align': 'center'}}">
     SpacEx Launch Programs
   </header>
-  <main fxLayout="row" style="margin-top: 30px;" fxLayoutGap="30px" fxLayout.lt-sm="column"
-    [ngStyle.lt-sm]="{'align-items':'center'}">
+  <main style="margin-top: 30px;" class="main">
     <section id="side">
       <div class="filthead">Filters</div>
       <div class="ly">Launch Year</div>
@@ -25,7 +24,7 @@
     </section>
     <section id="content">
       <div class="gridwrap">
-        <div *ngIf="firstdata != null" fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="10px grid">
+        <div *ngIf="firstdata != null" fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="10px 10px grid">
           <div *ngFor="let data of firstdata">
             <div class="card">
               <div class="imgwrap">
@@ -49,7 +48,7 @@
                 Successful Lauch:&nbsp; <span style="font-weight: 400; color:#195184"> {{data['launch_success']}}</span>
               </div>
               <div class="subhead">
-                Successful Landing:&nbsp; <span style="font-weight: 400; color:#195184"> {{data['launch_landing'] ? data['launch_landing'] :"NA" }}</span>
+                Successful Landing:&nbsp; <span style="font-weight: 400; color:#195184"> {{data['rocket']['first_stage']['cores'][0]['land_success'] ? data['rocket']['first_stage']['cores'][0]['land_success'] : false}}</span>
               </div>
             </div>
           </div>
