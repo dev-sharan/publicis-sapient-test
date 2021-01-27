@@ -13,7 +13,7 @@ export class DataService {
   }
 
   filterApi(launchyr?, launchsuccess? , landsussess?) {
-    let queryurl = `https://api.spacexdata.com/v3/launches?limit=100${launchsuccess ? '&launch_success='+launchsuccess : '&launch_success=false'}${landsussess ? '&land_success='+landsussess : '&land_success=false' }${launchyr ? '&launch_year='+launchyr : ''}`;
+    let queryurl = `https://api.spacexdata.com/v3/launches?limit=100${launchsuccess !== null ? '&launch_success='+launchsuccess : ''}${landsussess !== null ? '&land_success='+landsussess : '' }${launchyr !== null? '&launch_year='+launchyr : ''}`;
     return this.http.get(queryurl);
   }
 

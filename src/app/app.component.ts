@@ -14,9 +14,9 @@ export class AppComponent implements OnInit {
   launchsuccess = null;
   landsuccess = null;
 
-  yrtoggle = '';
-  launchtoggle = '';
-  landtoggle = '';
+  yrtoggle = null;
+  launchtoggle = null;
+  landtoggle = null;
 
 
   title = 'publicis-sapient-test';
@@ -36,13 +36,13 @@ export class AppComponent implements OnInit {
 
   filter(yrfltr?, launchsuccess?, landsuccess?) {
     if (yrfltr != null) {
-      this.yrfltr = yrfltr;
+      this.yrTogFn(yrfltr);
     }
     if (landsuccess != null) {
-      this.landsuccess = landsuccess;
+      this.landTogFn(landsuccess);
     }
     if (launchsuccess != null) {
-      this.launchsuccess = launchsuccess;
+      this.launchTogFn(launchsuccess);
     }
     this.data.filterApi(this.yrfltr, this.launchsuccess, this.landsuccess).subscribe((data) => {
       this.firstdata = data;
@@ -51,31 +51,31 @@ export class AppComponent implements OnInit {
 
   yrTogFn(data) {
     if (data === this.yrtoggle) {
-      this.yrtoggle = '-1';
+      this.yrtoggle = null;
+      this.yrfltr = null;
     } else {
+      this.yrfltr = data;
       this.yrtoggle = data;
     }
   }
 
   launchTogFn(data) {
     if (data === this.launchtoggle) {
-      this.launchtoggle = '-1';
+      this.launchtoggle = null;
+      this.launchsuccess = null;
     } else {
-      this.launchtoggle = data + '';
+      this.launchsuccess = data;
+      this.launchtoggle = data;
     }
   }
 
   landTogFn(data) {
     if (data === this.landtoggle) {
-      this.landtoggle = '-1';
+      this.landtoggle = null;
+      this.landsuccess = null;
     } else {
-      this.landtoggle = data + '';
-    }
-  }
-
-  checkRes() {
-    if (this.yrtoggle === '-1' && this.launchtoggle === '-1' && this.landtoggle === '-1') {
-      this.intialApiCall();
+      this.landsuccess = data;
+      this.landtoggle = data;
     }
   }
 }

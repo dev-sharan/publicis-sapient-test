@@ -8,19 +8,19 @@
       <div class="filthead">Filters</div>
       <div class="ly">Launch Year</div>
       <div class="lywrap" fxLayout="row wrap">
-        <div class="sidesec" *ngFor="let items of year" (click) = "filter(items,null,null); yrTogFn(items); checkRes()" [ngClass]="yrtoggle === items ? 'active' : 'inactive'">{{items}}</div>
+        <div class="sidesec" *ngFor="let items of year; let i = index" (click) = "filter(items,null,null);" (keyup.enter) = "filter(items,null,null);" [attr.tabindex]="i+4" [attr.aria-label] = "'#yr:'+items" [ngClass]="yrtoggle === items ? 'active' : 'inactive'">{{items}}</div>
       </div>
       <div class="slnch">
         Successful Launch</div>
       <div class="slnchwrap" fxLayout="row wrap">
-        <div class="sidesec" (click) = "filter(null,true,null); launchTogFn('true'); checkRes()" [ngClass]="launchtoggle === 'true' ? 'active' : 'inactive'">True</div>
-        <div class="sidesec" (click) = "filter(null,false,null); launchTogFn('false'); checkRes()" [ngClass]="launchtoggle === 'false' ? 'active' : 'inactive'">False</div>
+        <div class="sidesec" (click) = "filter(null,true,null);" (keyup.enter) = "filter(null,true,null);" [attr.tabindex]="20" [attr.aria-label] = "'#launch:'+true" [ngClass]="launchtoggle != null && launchtoggle ? 'active' : 'inactive'">True</div>
+        <div class="sidesec" (click) = "filter(null,false,null);" (keyup.enter) = "filter(null,false,null);" [attr.tabindex]="21" [attr.aria-label] = "'#launch:'+false" [ngClass]="launchtoggle != null && !launchtoggle ? 'active' : 'inactive'">False</div>
       </div>
       <div class="slnch">
         Successful Landing</div>
       <div class="slnchwrap" fxLayout="row wrap">
-        <div class="sidesec" (click) = "filter(null,null,true); landTogFn('true'); ; checkRes()" [ngClass]="landtoggle === 'true' ? 'active' : 'inactive'">True</div>
-        <div class="sidesec" (click) = "filter(null,null,false); landTogFn('false'); checkRes()" [ngClass]="landtoggle === 'false' ? 'active' : 'inactive'">False</div>
+        <div class="sidesec" (click) = "filter(null,null,true);" (keyup.enter) = "filter(null,null,true);" [attr.tabindex]="22" [attr.aria-label] = "'#land'+true" [ngClass]="landtoggle != null && landtoggle ? 'active' : 'inactive'">True</div>
+        <div class="sidesec" (click) = "filter(null,null,false);" (keyup.enter) = "filter(null,null,false);" [attr.tabindex]="23" [attr.aria-label] = "'#land'+false" [ngClass]="landtoggle != null && !landtoggle ? 'active' : 'inactive'">False</div>
       </div>
     </section>
     <section id="content">
